@@ -1,0 +1,61 @@
+name: coffee_wonders_for_technical
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  flutter_localizations:
+    sdk: flutter
+
+  intl: any
+  cupertino_icons: ^1.0.6
+  flutter_phoenix: ^1.1.1
+  flutter_screenutil: ^5.9.0
+  dio: ^5.4.0
+  shared_preferences: ^2.2.2
+  flutter_bloc: ^8.1.3
+  rename: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
+  equatable: ^2.0.5
+  get_it: ^7.6.4
+  dartz: ^0.10.1
+  fluttertoast: ^8.2.4
+  pretty_dio_logger: ^1.3.1
+  get: ^4.6.6
+
+flutter_launcher_icons:
+  android: 'ic_launcher'
+  ios: true
+  image_path: "assets/images/logo.png"
+  remove_alpha_ios: true
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+
+fonts:
+  - family: Cairo
+    fonts:
+      - asset: assets/fonts/Cairo-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Cairo-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/Cairo-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Cairo-Light.ttf
+        weight: 300
