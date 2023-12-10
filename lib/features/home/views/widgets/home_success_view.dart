@@ -22,7 +22,12 @@ class HomeSuccessView extends StatelessWidget {
         HomeCubit.get(context).getAllServiceRequests(context);
       },
       child: model.data.isEmpty
-          ? const EmptyWidget()
+          ? const Center(
+              child: SingleChildScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                child: EmptyWidget(),
+              ),
+            )
           : ListView.separated(
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),

@@ -10,13 +10,17 @@ class EmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        AppLocalizations.of(context)!.empty,
-        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              color: ColorManager.grey.withOpacity(0.9),
-              fontSize: FontSizeManager.s20.sp,
-            ),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.8,
+      child: Center(
+        child: Text(
+          AppLocalizations.of(context)!.empty,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                color: ColorManager.grey.withOpacity(0.9),
+                fontSize: FontSizeManager.s20.sp,
+              ),
+        ),
       ),
     );
   }
