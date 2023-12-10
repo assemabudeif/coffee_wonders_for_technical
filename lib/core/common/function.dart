@@ -2,7 +2,6 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
-import '../resources/language_manager.dart';
 import '../services/shared_prefrences/cache_helper.dart';
 
 class SharedFunction {

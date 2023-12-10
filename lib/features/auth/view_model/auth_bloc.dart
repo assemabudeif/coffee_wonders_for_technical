@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:coffee_wonders_for_technical/core/resources/color_manager.dart';
+
 import '../../../core/resources/routes_manager.dart';
 import '../../../main.dart';
 import '../data/params.dart';
@@ -8,7 +10,6 @@ import '../data/repo/auth_repo.dart';
 import '/core/resources/constants_manager.dart';
 import '/core/services/shared_prefrences/cache_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,8 +26,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthLogoutEvent>(onLogoutEvent);
   }
 
+  bool isLoading = false;
+
   FutureOr<void> onLoginEvent(
       AuthLoginEvent event, Emitter<AuthState> emit) async {
+    isLoading = true;
     emit(AuthLoginLoading());
     final result = await _authRepository.login(
       LoginParams(
@@ -34,12 +38,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         password: event.params.password,
       ),
     );
+    log(isLoading.toString());
 
     result.fold(
       (failure) {
+        isLoading = false;
+
+        ScaffoldMessenger.of(event.context).showSnackBar(
+          SnackBar(
+            content: Text(failure.message),
+            backgroundColor: ColorManager.error,
+          ),
+        );
         emit(AuthLoginFailure(failure.message));
       },
       (success) {
+        isLoading = false;
         _saveTokenToSharedPref(
           token: success.data.token,
           technicalName: success.data.user.name,

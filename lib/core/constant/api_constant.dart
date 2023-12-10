@@ -2,7 +2,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
 import '../services/shared_prefrences/cache_helper.dart';
-import '/core/resources/constants_manager.dart';
 
 class ApiConstant {
   static const String baseUrl = "https://pos-api.lineerp.live/";

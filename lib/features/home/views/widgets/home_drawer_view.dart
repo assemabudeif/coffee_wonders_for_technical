@@ -3,12 +3,7 @@ import 'package:coffee_wonders_for_technical/core/resources/language_manager.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../core/resources/strings_manager.dart';
-import '../../../../core/services/shared_prefrences/cache_helper.dart';
-import '../../../../main.dart';
 import '/core/resources/assets_manager.dart';
 import '/core/resources/color_manager.dart';
 import '/core/resources/constants_manager.dart';

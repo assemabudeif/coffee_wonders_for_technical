@@ -1,9 +1,6 @@
-import 'dart:developer';
-
-import 'package:coffee_wonders_for_technical/core/resources/constants_manager.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../core/resources/strings_manager.dart';
+import '../../../core/common/check_internet_conection.dart';
 import '/features/home/views/widgets/home_success_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,17 +19,17 @@ class HomeView extends StatelessWidget {
         title: Text(
           AppLocalizations.of(context)!.home,
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              log(AppConstants.appLanguage);
-            },
-            icon: const Icon(
-              Icons.language,
-              // color: ColorManager.white,
-            ),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       log(AppConstants.appLanguage);
+        //     },
+        //     icon: const Icon(
+        //       Icons.language,
+        //       // color: ColorManager.white,
+        //     ),
+        //   ),
+        // ],
       ),
       drawer: const HomeDrawerView(),
       body: BlocProvider(
@@ -54,18 +51,28 @@ class HomeView extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               case const (HomeErrorState):
-                return Center(
-                  child: Text(
-                    (state as HomeErrorState).message.toString(),
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                          color: ColorManager.error,
-                          fontWeight: FontWeight.bold,
-                        ),
+                return CheckNetworkConnectionWidget(
+                  child: Center(
+                    child: Text(
+                      (state as HomeErrorState).message.toString(),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: ColorManager.error,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
                   ),
+                  onRetryPressed: () {
+                    HomeCubit.get(context).getAllServiceRequests(context);
+                  },
                 );
               case const (HomeLoadedState):
                 final model = HomeCubit.get(context).allServiceRequestsModel;
-                return HomeSuccessView(model: model);
+                return CheckNetworkConnectionWidget(
+                  onRetryPressed: () {
+                    HomeCubit.get(context).getAllServiceRequests(context);
+                  },
+                  child: HomeSuccessView(model: model),
+                );
               default:
                 return Container();
             }

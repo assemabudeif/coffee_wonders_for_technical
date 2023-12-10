@@ -1,4 +1,3 @@
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 
 import '/core/resources/constants_manager.dart';

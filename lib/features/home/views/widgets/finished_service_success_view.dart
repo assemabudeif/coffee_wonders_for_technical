@@ -6,7 +6,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/resources/strings_manager.dart';
 
 class FinishedServiceSuccessView extends StatelessWidget {
   const FinishedServiceSuccessView(

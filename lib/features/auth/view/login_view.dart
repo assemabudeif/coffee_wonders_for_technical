@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import '../../../core/resources/color_manager.dart';
-import '../../../core/resources/strings_manager.dart';
 import '../data/repo/auth_repo_impl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -163,11 +162,11 @@ class _LoginViewState extends State<LoginView> {
                           height:
                               MediaQuery.of(context).size.height / AppSize.s30,
                         ),
-                        if (state is AuthLoginLoading)
+                        if (BlocProvider.of<AuthBloc>(context).isLoading)
                           const Center(
                             child: CircularProgressIndicator(
-                                // color: ColorManager.primaryColor,
-                                ),
+                              color: ColorManager.mintGreen,
+                            ),
                           )
                         else
                           ElevatedButton(

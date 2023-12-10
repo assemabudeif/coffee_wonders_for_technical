@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:coffee_wonders_for_technical/core/resources/color_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,7 +8,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import '../../../core/resources/routes_manager.dart';
-import '../../../core/resources/strings_manager.dart';
 import '../data/models/all_parts_model.dart';
 import '../data/models/all_service_requests_model.dart';
 import '../data/params.dart';
@@ -204,11 +202,11 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void changePartCount(int id, String value) {
-    finishedServicePartParams.forEach((element) {
+    for (var element in finishedServicePartParams) {
       if (element.id == allPartsModel.data[id].id) {
         element.quantity = int.parse(value);
       }
-    });
+    }
     emit(ChangeSelectedPartLoadedState());
   }
 }

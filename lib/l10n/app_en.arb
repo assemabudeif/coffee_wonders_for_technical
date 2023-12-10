@@ -50,5 +50,6 @@
   "area": "Area",
   "buildingNumber": "Building Number",
   "apartmentNumber": "Apartment Number",
-  "postalCode": "Postal Code"
+  "postalCode": "Postal Code",
+  "retry": "Retry"
 }

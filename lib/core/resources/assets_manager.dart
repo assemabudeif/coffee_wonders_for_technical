@@ -37,4 +37,5 @@ class AssetsManager {
 
   static const String loginTopImage = "$imagePath/login_image.png";
   static const String vectorImage = "$imagePath/vector.png";
+  static const String noInternetImage = "$imagePath/no_internet.jpg";
 }

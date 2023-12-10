@@ -50,5 +50,6 @@
   "area": "المنطقة",
   "buildingNumber": "رقم المبنى",
   "apartmentNumber": "رقم الشقة",
-  "postalCode": "الرمز البريدي"
+  "postalCode": "الرمز البريدي",
+  "retry": "إعادة المحاولة"
 }

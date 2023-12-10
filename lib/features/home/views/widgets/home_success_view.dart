@@ -6,7 +6,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/routes_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
 import '../../data/models/all_service_requests_model.dart';
 import '../../view_model/home_cubit.dart';
 
