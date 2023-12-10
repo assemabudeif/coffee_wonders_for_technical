@@ -122,9 +122,6 @@ class HomeSuccessView extends StatelessWidget {
                                   firstText:
                                       AppLocalizations.of(context)!.country,
                                   secondText: model.data[listIndex].country,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -133,9 +130,6 @@ class HomeSuccessView extends StatelessWidget {
                                   firstText:
                                       AppLocalizations.of(context)!.state,
                                   secondText: model.data[listIndex].state,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -143,9 +137,6 @@ class HomeSuccessView extends StatelessWidget {
                                 _buildItemOfRequestDetails(
                                   firstText: AppLocalizations.of(context)!.area,
                                   secondText: model.data[listIndex].area,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -154,9 +145,6 @@ class HomeSuccessView extends StatelessWidget {
                                   firstText: AppLocalizations.of(context)!
                                       .buildingNumber,
                                   secondText: model.data[listIndex].building,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -165,9 +153,6 @@ class HomeSuccessView extends StatelessWidget {
                                   firstText: AppLocalizations.of(context)!
                                       .apartmentNumber,
                                   secondText: model.data[listIndex].apartment,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -176,9 +161,6 @@ class HomeSuccessView extends StatelessWidget {
                                   firstText:
                                       AppLocalizations.of(context)!.postalCode,
                                   secondText: model.data[listIndex].postalCode,
-                                  secondTextColor: _getStatusColor(
-                                    model.data[listIndex].status,
-                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
